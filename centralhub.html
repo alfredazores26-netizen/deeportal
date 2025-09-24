@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>projects for her!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+      background-size: 400% 400%;
+      animation: bgMove 12s ease infinite;
+      color: #2d1a3a;
+      text-align: center;
+    }
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.2em;
+      color: #4e1a3a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.8);
+      border-radius: 15px;
+      padding: 18px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #4e1a3a;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #731b3b;
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 1em;
+      font-weight: normal;
+    }
+
+    /* Floating little hearts for decoration */
+    .floating-heart {
+      position: absolute;
+      font-size: 18px;
+      opacity: 0.6;
+      pointer-events: none;
+      animation: floatUp 8s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Things I Made for You 💕</h1>
+
+  <div class="grid">
+    <div class="card">
+      <p>Things I Love About Dee</p>
+      <a href="https://alfredazores26-netizen.github.io/dee-project/" target="_blank">Open project →</a>
+    </div>
+
+    <div class="card">
+      <p>Catch Hearts Game</p>
+      <a href="https://alfredazores26-netizen.github.io/catchheartsgame/" target="_blank">Open project →</a>
+    </div>
+
+    <div class="card">
+      <p>Sleep Well Page</p>
+      <a href="https://alfredazores26-netizen.github.io/eepwell/" target="_blank">Open project →</a>
+    </div>
+
+    <div class="card">
+      <p>Heart Popping</p>
+      <a href="https://alfredazores26-netizen.github.io/heartpopping/" target="_blank">Open project →</a>
+    </div>
+
+    <div class="card">
+      <p>Short Letter 9/2/25</p>
+      <a href="https://alfredazores26-netizen.github.io/letterforu/" target="_blank">Open project →</a>
+    </div>
+  </div>
+
+  <script>
+    function spawnHeart() {
+      const h = document.createElement("div");
+      h.className = "floating-heart";
+      h.innerText = "❤️";
+      h.style.left = Math.random() * 100 + "vw";
+      h.style.fontSize = (14 + Math.random() * 12) + "px";
+      h.style.animationDuration = (6 + Math.random() * 6) + "s";
+      document.body.appendChild(h);
+      setTimeout(() => { h.remove(); }, 8000);
+    }
+
+    setInterval(spawnHeart, 900);
+  </script>
+</body>
+</html>
